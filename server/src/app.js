@@ -4,8 +4,8 @@ import morgan from 'morgan';
 import disciplinasRoute from './routes/disciplinas';
 import temasEstudioRoute from './routes/temas-estudio';
 import tarjetasRoute from './routes/tarjetas';
-import tarContenidoRoute from './routes/tar_contenido';
-import tarEjemploRoute from './routes/tar_ejemplo';
+import tarContenidoRoute from './routes/tar_contenidos';
+import tarEjemploRoute from './routes/tar_ejemplos';
 
 const app = express();
 
