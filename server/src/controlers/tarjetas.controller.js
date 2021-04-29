@@ -18,4 +18,7 @@ function obtenerTarjetas(req, res){
     res.send('recieved')
 }
 
-export default {crearTarjeta,modificarTarjeta,borrarTarjeta,obtenerTarjetas}
+export default {crearTarjeta,
+                modificarTarjeta,
+                borrarTarjeta,
+                obtenerTarjetas}
