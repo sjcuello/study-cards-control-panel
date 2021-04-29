@@ -1,21 +1,21 @@
-function crearDisciplina(req, res){
+function crearTarjeta(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function modificarDisciplina(req, res){
+function modificarTarjeta(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function borrarDisciplina(req, res){
+function borrarTarjeta(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function obtenerDisciplinas(req, res){
+function obtenerTarjetas(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-export default {crearDisciplina,modificarDisciplina,borrarDisciplina,obtenerDisciplinas}
+export default {crearTarjeta,modificarTarjeta,borrarTarjeta,obtenerTarjetas}

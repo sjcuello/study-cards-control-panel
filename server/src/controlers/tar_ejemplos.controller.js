@@ -1,21 +1,21 @@
-function crearDisciplina(req, res){
+function crearTarEjemplo(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function modificarDisciplina(req, res){
+function modificarTarEjemplo(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function borrarDisciplina(req, res){
+function borrarTarEjemplo(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function obtenerDisciplinas(req, res){
+function obtenerTarEjemplo(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-export default {crearDisciplina,modificarDisciplina,borrarDisciplina,obtenerDisciplinas}
+export default {crearTarEjemplo,modificarTarEjemplo,borrarTarEjemplo,obtenerTarEjemplo}

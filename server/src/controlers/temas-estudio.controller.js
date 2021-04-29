@@ -1,21 +1,21 @@
-function crearDisciplina(req, res){
+function crearTemaEstudio(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function modificarDisciplina(req, res){
+function modificarTemaEstudio(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function borrarDisciplina(req, res){
+function borrarTemaEstudio(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function obtenerDisciplinas(req, res){
+function obtenerTemasEstudio(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-export default {crearDisciplina,modificarDisciplina,borrarDisciplina,obtenerDisciplinas}
+export default {crearTemaEstudio,modificarTemaEstudio,borrarTemaEstudio,obtenerTemasEstudio}
