@@ -7,7 +7,8 @@ import Tar_ejemplos from './tar_ejemplos';
 const Tarjetas = sequelize.define('Tarjetas',{
     id: {
         type: Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     id_tema_estudio: {
         type: Sequelize.INTEGER,

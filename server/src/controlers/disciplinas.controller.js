@@ -1,6 +1,14 @@
-function crearDisciplina(req, res){
-    console.log('req.body :>> ', req.body);
-    res.send('recieved')
+import Disciplinas from "../models/disciplinas";
+
+async function crearDisciplina(req, res){
+    const { nombre, color } = req.body
+
+    let disciplina = await Disciplinas.create({
+        nombre,
+        color
+    })
+
+    res.json({msg:'ok', data: disciplina})
 }
 
 function modificarDisciplina(req, res){

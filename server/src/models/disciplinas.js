@@ -5,7 +5,8 @@ import TemasEstudio from './temas-estudio';
 const Disciplinas = sequelize.define('Disciplinas',{
     id: {
         type: Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     nombre: {
         type: Sequelize.TEXT

@@ -5,7 +5,8 @@ import Tarjetas from './tarjetas'
 const TemasEstudio = sequelize.define('Temas-estudio',{
     id: {
         type: Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     id_disciplina: {
         type: Sequelize.INTEGER,

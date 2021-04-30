@@ -4,7 +4,8 @@ import { sequelize } from '../database/database';
 const Tar_contenidos = sequelize.define('Tar_contenidos',{
     id: {
         type: Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     id_tarjeta: {
         type: Sequelize.INTEGER,
