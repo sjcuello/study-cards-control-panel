@@ -15,9 +15,9 @@ app.use(json())
 
 
 app.use('/api/disciplinas', disciplinasRoute)
-app.use('/api/temas-estudio',temasEstudioRoute)
+app.use('/api/temas-estudio', temasEstudioRoute)
 app.use('/api/tarjetas', tarjetasRoute)
-app.use('/api/tar-contenido',tarContenidoRoute)
+app.use('/api/tar-contenido', tarContenidoRoute)
 app.use('/api/tar-ejemplo', tarEjemploRoute)
 
 

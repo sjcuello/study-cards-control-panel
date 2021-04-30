@@ -12,7 +12,11 @@ const Tar_contenidos = sequelize.define('Tar_contenidos',{
     },
     contenido: {
         type: Sequelize.TEXT
-    }
+    },
+    estado: {
+        type: Sequelize.INTEGER,
+        defaultValue: 1
+    },
 },{
     timestamps:false
 });

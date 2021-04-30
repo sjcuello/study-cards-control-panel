@@ -19,7 +19,11 @@ const TemasEstudio = sequelize.define('Temas-estudio',{
     },
     tag: {
         type: Sequelize.TEXT
-    }
+    },
+    estado: {
+        type: Sequelize.INTEGER,
+        defaultValue: 1
+    },
 },{
     timestamps:false
 });

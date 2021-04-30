@@ -12,7 +12,11 @@ const Tar_ejemplos = sequelize.define('Tar_ejemplos',{
     },
     ejemplo: {
         type: Sequelize.TEXT
-    }
+    },
+    estado: {
+        type: Sequelize.INTEGER,
+        defaultValue: 1
+    },
 },{
     timestamps:false
 });

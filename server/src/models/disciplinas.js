@@ -13,7 +13,11 @@ const Disciplinas = sequelize.define('Disciplinas',{
     },
     color: {
         type: Sequelize.TEXT
-    }
+    },
+    estado: {
+        type: Sequelize.INTEGER,
+        defaultValue: 1
+    },
 },{
     timestamps:false
 });

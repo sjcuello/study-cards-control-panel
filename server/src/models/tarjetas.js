@@ -18,7 +18,11 @@ const Tarjetas = sequelize.define('Tarjetas',{
     },
     color: {
         type: Sequelize.TEXT
-    }
+    },
+    estado: {
+        type: Sequelize.INTEGER,
+        defaultValue: 1
+    },
 },{
     timestamps:false
 });
