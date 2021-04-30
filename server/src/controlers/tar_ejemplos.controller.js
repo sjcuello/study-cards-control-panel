@@ -18,4 +18,9 @@ function obtenerTarEjemplo(req, res){
     res.send('recieved')
 }
 
-export default {crearTarEjemplo,modificarTarEjemplo,borrarTarEjemplo,obtenerTarEjemplo}
+module.exports = {
+    crearTarEjemplo,
+    modificarTarEjemplo,
+    borrarTarEjemplo,
+    obtenerTarEjemplo
+}

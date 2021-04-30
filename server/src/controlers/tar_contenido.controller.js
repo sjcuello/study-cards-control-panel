@@ -18,4 +18,9 @@ function obtenerTarContenido(req, res){
     res.send('recieved')
 }
 
-export default {crearTarContenido,modificarTarContenido,borrarTarContenido,obtenerTarContenido}
+module.exports = {
+    crearTarContenido,
+    modificarTarContenido,
+    borrarTarContenido,
+    obtenerTarContenido
+}

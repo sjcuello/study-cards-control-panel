@@ -18,4 +18,9 @@ function obtenerDisciplinas(req, res){
     res.send('recieved')
 }
 
-export default {crearDisciplina,modificarDisciplina,borrarDisciplina,obtenerDisciplinas}
+module.exports = {
+    crearDisciplina,
+    modificarDisciplina,
+    borrarDisciplina,
+    obtenerDisciplinas
+}

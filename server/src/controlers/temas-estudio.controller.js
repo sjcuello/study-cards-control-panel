@@ -18,4 +18,9 @@ function obtenerTemasEstudio(req, res){
     res.send('recieved')
 }
 
-export default {crearTemaEstudio,modificarTemaEstudio,borrarTemaEstudio,obtenerTemasEstudio}
+module.exports = {
+    crearTemaEstudio,
+    modificarTemaEstudio,
+    borrarTemaEstudio,
+    obtenerTemasEstudio
+}

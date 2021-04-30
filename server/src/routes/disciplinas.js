@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import { createProject } from '../controlers/disciplinas.controller'
+import { crearDisciplina } from '../controlers/disciplinas.controller'
 const router = Router();
 
-router.get('/', createProject)
+router.get('/', crearDisciplina)
 
 export default router;
