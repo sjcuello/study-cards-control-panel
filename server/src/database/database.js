@@ -1,12 +1,12 @@
 import { Sequelize } from "sequelize"
 
 export const sequelize = new Sequelize(
-    'postgres',
-    'postgres', //usuario
-    'password', //contraseña
+    'studycardsmdb',
+    'admin', //usuario
+    'adminadmin', //contraseña
     {
-        host: 'localhost',
-        dialect: 'postgres',
+        host: 'studycardsmdb.cn0lov2coyhd.us-west-2.rds.amazonaws.com',
+        dialect: 'mysql',
         pool:{
             max:5,
             min:0,
