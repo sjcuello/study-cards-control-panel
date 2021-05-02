@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ConfigurationComponent } from './components/configuration/configuration.component';
 import { ConfigurationRoutingModule } from './configuration-routing.module';
@@ -7,7 +8,8 @@ import { ConfigurationRoutingModule } from './configuration-routing.module';
         ConfigurationComponent
     ],
     imports: [
-        ConfigurationRoutingModule
+        ConfigurationRoutingModule,
+        CommonModule
     ],
     providers: [ConfigurationComponent]
 })

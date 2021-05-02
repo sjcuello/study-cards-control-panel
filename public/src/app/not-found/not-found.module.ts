@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NotFoundRoutingModule } from './not-found-routing.module';
@@ -7,7 +8,8 @@ import { NotFoundRoutingModule } from './not-found-routing.module';
         NotFoundComponent
     ],
     imports: [
-        NotFoundRoutingModule
+        NotFoundRoutingModule,
+        CommonModule
     ],
     providers: [NotFoundComponent]
 })
