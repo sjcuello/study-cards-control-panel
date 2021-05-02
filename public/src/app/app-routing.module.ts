@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component'
-import { ConfigurationComponent } from './configuration/configuration.component'
-import { PageComponent} from './page/page.component'
-import { NotFoundComponent } from './not-found/not-found.component'
+import { PageComponent } from './page/page.component'
 
 const routes: Routes = [
   {
     path: '',
     component: PageComponent,
-    children:[
+    children: [
       {
         path: '',
         redirectTo: 'home',
@@ -18,16 +15,16 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: HomeComponent,
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'configuration',
-        component: ConfigurationComponent
+        loadChildren: () => import('./configuration/configuration.module').then(m => m.ConfigurationModule)
       },
-      
+
       {
         path: 'not-found',
-        component: NotFoundComponent
+        loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
       },
       {
         path: '**',
@@ -35,11 +32,13 @@ const routes: Routes = [
       }
     ]
   }
-  
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
