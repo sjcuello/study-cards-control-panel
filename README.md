@@ -1,1 +1,1 @@
-# brain-cards
+# study-cards-control-panel
