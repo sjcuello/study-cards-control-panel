@@ -9,6 +9,7 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     NavRoutingModule,
     MaterialModule
-  ]
+  ],
+  exports: [NavComponent],
 })
 export class NavModule { }

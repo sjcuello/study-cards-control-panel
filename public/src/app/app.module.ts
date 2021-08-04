@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material/material.module';
 import { PageComponent } from './page/page.component';
+import { NavModule } from './nav/nav.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PageComponent } from './page/page.component';
     CoreModule,
     LayoutModule,
     MaterialModule,
+    NavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
