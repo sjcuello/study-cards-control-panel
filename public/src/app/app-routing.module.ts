@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { PageComponent } from './page/page.component'
+import { PageComponent } from './page/page.component';
 
 const routes: Routes = [
   {
@@ -10,8 +10,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
         pathMatch: 'full',
+        redirectTo: '/home',
       },
       {
         path: 'home',
@@ -25,15 +25,15 @@ const routes: Routes = [
         path: 'nav',
         loadChildren: () => import('./nav/nav.module').then(m => m.NavModule)
       },
-      {
-        path: 'not-found',
-        loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
-      },
-      {
-        path: '**',
-        redirectTo: 'not-found',
-      }
-    ]
+    ],
+  },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
   }
 
 ];
