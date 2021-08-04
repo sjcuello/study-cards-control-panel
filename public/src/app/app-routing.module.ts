@@ -21,7 +21,10 @@ const routes: Routes = [
         path: 'configuration',
         loadChildren: () => import('./configuration/configuration.module').then(m => m.ConfigurationModule)
       },
-
+      {
+        path: 'nav',
+        loadChildren: () => import('./nav/nav.module').then(m => m.NavModule)
+      },
       {
         path: 'not-found',
         loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
