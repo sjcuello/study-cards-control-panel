@@ -45,8 +45,9 @@ async function deleteDisciplina(req, res) {
 }
 
 async function allDisciplinas(req, res) {
-    const allDisciplinas = await Disciplinas.findAll();
-    res.json({ msg: 'ok', data: allDisciplinas });
+    // const disciplinas = await Disciplinas.findAll();
+    const disciplinas = { ejemplo: 1234, disiplinas: [1, 2, 3, 4] }
+    res.json({ msg: 'ok', data: disciplinas });
 }
 
 module.exports = {
