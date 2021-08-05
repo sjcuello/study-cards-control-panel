@@ -6,10 +6,11 @@ import temasEstudioRoute from './routes/temas-estudio';
 import tarjetasRoute from './routes/tarjetas';
 import tarContenidoRoute from './routes/tar_contenidos';
 import tarEjemploRoute from './routes/tar_ejemplos';
+import cors from 'cors';
 
 const app = express();
 
-
+app.use(cors());
 app.use(morgan('dev'));
 app.use(json())
 

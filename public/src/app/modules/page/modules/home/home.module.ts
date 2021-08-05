@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { HomeRoutingModule } from './home-routing.module';
@@ -9,7 +10,8 @@ import { HomeRoutingModule } from './home-routing.module';
     ],
     imports: [
         HomeRoutingModule,
-        CommonModule
+        CommonModule,
+        HttpClientModule
     ],
     providers: [HomeComponent]
 })

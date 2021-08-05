@@ -15,18 +15,18 @@ export class DisiplinasService {
   }
 
   postCreate(body: object): Observable<object> {
-    return this.http.post<object>(`${this.url.backendUrl}${this.path}/create`, body, {});
+    return this.http.post<object>(`${this.url.urlConst}${this.path}/create`, body, {});
   }
 
   getAll(): Observable<object> {
-    return this.http.get<object>(`${this.url.backendUrl}${this.path}/all`, {});
+    return this.http.get<object>(`${this.url.urlConst}${this.path}/all`, {});
   }
 
   getById(id: number): Observable<object> {
-    return this.http.get<object>(`${this.url.backendUrl}${this.path}/${id}`, {});
+    return this.http.get<object>(`${this.url.urlConst}${this.path}/${id}`, {});
   }
 
   deleteById(id: number): Observable<object> {
-    return this.http.delete<object>(`${this.url.backendUrl}${this.path}/${id}`, {});
+    return this.http.delete<object>(`${this.url.urlConst}${this.path}/${id}`, {});
   }
 }

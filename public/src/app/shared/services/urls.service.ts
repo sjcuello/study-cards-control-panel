@@ -5,8 +5,5 @@ import { url } from '../../../assets/environment-specific-settings/urls';
   providedIn: 'root'
 })
 export class UrlsService {
-
-  backendUrl(): string {
-    return url.backendUrl;
-  }
+  public urlConst = url.backendUrl;
 }

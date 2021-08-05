@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DisiplinasService } from 'src/app/modules/page/services/disiplinas.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private disciplinasService: DisiplinasService) { }
 
   ngOnInit(): void {
+    this.disciplinasService.getAll().subscribe(data => {
+      console.log('data :>> ', data);
+    });
   }
 
 }
