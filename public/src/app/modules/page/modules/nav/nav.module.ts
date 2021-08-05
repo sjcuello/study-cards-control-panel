@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
+import { MaterialModule } from 'src/app/material/material.module';
 import { NavComponent } from './components/nav/nav.component';
 import { NavRoutingModule } from './nav-routing.module';
-import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({

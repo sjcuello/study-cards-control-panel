@@ -8,8 +8,8 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material/material.module';
-import { PageComponent } from './page/page.component';
-import { NavModule } from './nav/nav.module';
+import { PageComponent } from './modules/page/page.component';
+import { NavModule } from './modules/page/modules/nav/nav.module';
 
 @NgModule({
   declarations: [
