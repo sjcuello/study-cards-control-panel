@@ -1,26 +1,26 @@
-function crearTarContenido(req, res){
+function createTarContenido(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function modificarTarContenido(req, res){
+function getOneTarContenido(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function borrarTarContenido(req, res){
+function deleteTarContenido(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function obtenerTarContenido(req, res){
+function allTarContenido(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
 module.exports = {
-    crearTarContenido,
-    modificarTarContenido,
-    borrarTarContenido,
-    obtenerTarContenido
+    createTarContenido,
+    getOneTarContenido,
+    deleteTarContenido,
+    allTarContenido
 }

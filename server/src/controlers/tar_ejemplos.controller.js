@@ -1,26 +1,26 @@
-function crearTarEjemplo(req, res){
+function createTarEjemplo(req, res) {
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function modificarTarEjemplo(req, res){
+function modifyTarEjemplo(req, res) {
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function borrarTarEjemplo(req, res){
+function deleteTarEjemplo(req, res) {
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function obtenerTarEjemplo(req, res){
+function getAllTarEjemplo(req, res) {
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
 module.exports = {
-    crearTarEjemplo,
-    modificarTarEjemplo,
-    borrarTarEjemplo,
-    obtenerTarEjemplo
+    createTarEjemplo,
+    modifyTarEjemplo,
+    deleteTarEjemplo,
+    getAllTarEjemplo
 }

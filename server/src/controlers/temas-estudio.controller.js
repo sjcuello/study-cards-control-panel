@@ -1,26 +1,26 @@
-function crearTemaEstudio(req, res){
+function createTemaEstudio(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function modificarTemaEstudio(req, res){
+function modifyTemaEstudio(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function borrarTemaEstudio(req, res){
+function deleteTemaEstudio(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
-function obtenerTemasEstudio(req, res){
+function getOneTemasEstudio(req, res){
     console.log('req.body :>> ', req.body);
     res.send('recieved')
 }
 
 module.exports = {
-    crearTemaEstudio,
-    modificarTemaEstudio,
-    borrarTemaEstudio,
-    obtenerTemasEstudio
+    createTemaEstudio,
+    modifyTemaEstudio,
+    deleteTemaEstudio,
+    getOneTemasEstudio
 }

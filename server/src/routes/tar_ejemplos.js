@@ -3,13 +3,15 @@ const router = Router();
 
 // TODO> Implement
 
-router.post('/create', createContenido)
+import {createTarEjemplo, modifyTarEjemplo, deleteTarEjemplo, getAllTarEjemplo} from '../controlers/tar_ejemplos.controller'
 
-router.get('/all', allContenido)
+router.post('/create', createTarEjemplo)
 
-router.get('/:id', getOnecontenido)
+router.get('/all', getAllTarEjemplo)
 
-router.delete('/:id', deleteContenido)
+router.put('/:id', modifyTarEjemplo)
+
+router.delete('/:id', deleteTarEjemplo)
 
 
 export default router;

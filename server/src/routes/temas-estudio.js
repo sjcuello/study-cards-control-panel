@@ -1,13 +1,13 @@
 import { Router } from 'express'
 const router = Router();
 
-// TODO> Implement
+import { createTemaEstudio, modifyTemaEstudio, getOneTemasEstudio, deleteTemaEstudio } from '../controlers/temas-estudio.controller';
 
 router.post('/create', createTemaEstudio)
 
-router.get('/all', allTemaEstudio)
+router.put('/:id', modifyTemaEstudio)
 
-router.get('/:id', getOneTemaEstudio)
+router.get('/:id', getOneTemasEstudio)
 
 router.delete('/:id', deleteTemaEstudio)
 

@@ -2,12 +2,14 @@ import { Router } from 'express'
 const router = Router();
 
 // TODO> Implement
+import  {createTarjeta, modifyTarjeta, deleteTarjeta, getAllTarjetas} from '../controlers/tarjetas.controller'
+
 
 router.post('/create', createTarjeta)
 
-router.get('/all', allTarjeta)
+router.get('/all', getAllTarjetas)
 
-router.get('/:id', getOneTarjeta)
+router.put('/:id', modifyTarjeta)
 
 router.delete('/:id', deleteTarjeta)
 

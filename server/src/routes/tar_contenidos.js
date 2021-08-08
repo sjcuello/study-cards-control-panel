@@ -1,15 +1,14 @@
 import { Router } from 'express'
 const router = Router();
 
-// TODO> Implement
+import { createTarContenido, allTarContenido, getOneTarContenido, deleteTarContenido } from '../controlers/tar_contenido.controller'
 
-router.post('/create', createContenido)
+router.post('/create', createTarContenido)
 
-router.get('/all', allContenido)
+router.get('/all', allTarContenido)
 
-router.get('/:id', getOnecontenido)
+router.get('/:id', getOneTarContenido)
 
-router.delete('/:id', deleteContenido)
-
+router.delete('/:id', deleteTarContenido)
 
 export default router;
