@@ -1,17 +1,16 @@
 import { Router } from 'express'
+import { TarEjemplos } from '../controlers/tar_ejemplos.controller'
+
 const router = Router();
+const tar_ejemplos = new TarEjemplos()
 
-// TODO> Implement
+router.post('/create', tar_ejemplos.createTarEjemplo)
 
-import {createTarEjemplo, modifyTarEjemplo, deleteTarEjemplo, getAllTarEjemplo} from '../controlers/tar_ejemplos.controller'
+router.get('/all', tar_ejemplos.getAllTarEjemplo)
 
-router.post('/create', createTarEjemplo)
+router.put('/:id', tar_ejemplos.modifyTarEjemplo)
 
-router.get('/all', getAllTarEjemplo)
-
-router.put('/:id', modifyTarEjemplo)
-
-router.delete('/:id', deleteTarEjemplo)
+router.delete('/:id', tar_ejemplos.deleteTarEjemplo)
 
 
 export default router;

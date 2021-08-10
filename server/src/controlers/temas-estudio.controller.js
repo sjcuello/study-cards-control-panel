@@ -1,26 +1,23 @@
-function createTemaEstudio(req, res){
-    console.log('req.body :>> ', req.body);
-    res.send('recieved')
-}
+export class TemasEstudio {
 
-function modifyTemaEstudio(req, res){
-    console.log('req.body :>> ', req.body);
-    res.send('recieved')
-}
+    createTemaEstudio(req, res) {
+        console.log('req.body :>> ', req.body);
+        res.send('recieved')
+    }
 
-function deleteTemaEstudio(req, res){
-    console.log('req.body :>> ', req.body);
-    res.send('recieved')
-}
+    modifyTemaEstudio(req, res) {
+        console.log('req.body :>> ', req.body);
+        res.send('recieved')
+    }
 
-function getOneTemasEstudio(req, res){
-    console.log('req.body :>> ', req.body);
-    res.send('recieved')
-}
+    deleteTemaEstudio(req, res) {
+        console.log('req.body :>> ', req.body);
+        res.send('recieved')
+    }
 
-module.exports = {
-    createTemaEstudio,
-    modifyTemaEstudio,
-    deleteTemaEstudio,
-    getOneTemasEstudio
+    getOneTemasEstudio(req, res) {
+        console.log('req.body :>> ', req.body);
+        res.send('recieved')
+    }
+
 }
