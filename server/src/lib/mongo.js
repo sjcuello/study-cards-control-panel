@@ -8,66 +8,65 @@ const HOST = encodeURIComponent(config.db_host)
 
 
 const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${HOST}/${NAME}?retryWrites=true&w=majority`
+const client = new MongoClient(MONGO_URI, { useNewUrlParser: true });
+const dbName = NAME;
+let connection;
 
-class MongoLib {
-    constructor() {
-        this.client = new MongoClient(MONGO_URI, { useNewUrlParser: true });
-        this.dbName = NAME;
-    }
-
-    connect() {
-        if (!MongoLib.connection) {
-            MongoLib.connection = new Promise((resolve, reject) => {
-                this.client.connect(err => {
-                    if (err) {
-                        reject(err)
-                    }
-                    console.log('Connected succesfully to mongo !');
-                    resolve(this.client.db(this.dbName))
-                });
+async function connect() {
+    if (!connection) {
+        connection = new Promise((resolve, reject) => {
+            client.connect(err => {
+                if (err) {
+                    reject(err)
+                }
+                console.log('Connected succesfully to mongo !');
+                resolve(client.db(dbName))
             });
-        }
-        return MongoLib.connection;
+        });
     }
+    return connection;
+}
 
-    getAll(collection, query) {
-        return this.connect().then(db => {
-            return db.collection(collection).find(query).toArray();
-        })
-    }
+async function getAll(collection, query) {
+    return connect().then(db => {
+        return db.collection(collection).find(query).toArray();
+    })
+}
 
-    get(collection, id) {
-        return this.connect().then(db => {
-            return db.collection(collection).findOne({ _id: ObjectId(id) }).toArray();
-        })
-    }
-    dummy(){
-        return 'hola'
-    }
-    create(collection, data) {
-        console.log('collection :>> ', collection);
-        try {
-            console.log('data :>> ', data);
-            return this.connect().then(db => {
-                return db.collection(collection).insertOne(data).toArray();
-            }).then(result => result.insertId);
-        } catch (error) {
-            console.log('error :>> ', error);
-        }
-        
-    }
+function get(collection, id) {
+    return connect().then(db => {
+        return db.collection(collection).findOne({ _id: ObjectId(id) }).toArray();
+    })
+}
 
-    update(collection, id, data) {
-        return this.connect().then(db => {
-            return db.collection(collection).updateOne({ _id: ObjectId(id) }, { $set: data }, { upsert: true });
-        }).then(result => result.upsertId || id);
-    }
-
-    delete(collection, id) {
-        return this.connect().then(db => {
-            return db.collection(collection).deleteOne({ _id: ObjectId(id) }).toArray();
-        }).then(() => id);
+function create(collection, data) {
+    console.log('collection :>> ', collection);
+    try {
+        console.log('data :>> ', data);
+        return connect().then(db => {
+            return db.collection(collection).insertOne(data).toArray();
+        }).then(result => result.insertId);
+    } catch (error) {
+        console.log('error :>> ', error);
     }
 }
 
-module.exports = MongoLib;
+function update(collection, id, data) {
+    return connect().then(db => {
+        return db.collection(collection).updateOne({ _id: ObjectId(id) }, { $set: data }, { upsert: true });
+    }).then(result => result.upsertId || id);
+}
+
+function deleteId(collection, id) {
+    return connect().then(db => {
+        return db.collection(collection).deleteOne({ _id: ObjectId(id) }).toArray();
+    }).then(() => id);
+}
+
+module.exports = {
+    getAll,
+    get,
+    create,
+    update,
+    deleteId
+};
