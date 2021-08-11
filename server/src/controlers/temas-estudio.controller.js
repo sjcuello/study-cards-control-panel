@@ -1,23 +1,25 @@
-export class TemasEstudio {
+async function createTemaEstudio(req, res) {
+    console.log('req.body :>> ', req.body);
+    res.send('recieved')
+}
 
-    createTemaEstudio(req, res) {
-        console.log('req.body :>> ', req.body);
-        res.send('recieved')
-    }
+async function modifyTemaEstudio(req, res) {
+    console.log('req.body :>> ', req.body);
+    res.send('recieved')
+}
 
-    modifyTemaEstudio(req, res) {
-        console.log('req.body :>> ', req.body);
-        res.send('recieved')
-    }
+async function deleteTemaEstudio(req, res) {
+    console.log('req.body :>> ', req.body);
+    res.send('recieved')
+}
 
-    deleteTemaEstudio(req, res) {
-        console.log('req.body :>> ', req.body);
-        res.send('recieved')
-    }
-
-    getOneTemasEstudio(req, res) {
-        console.log('req.body :>> ', req.body);
-        res.send('recieved')
-    }
-
+async function getOneTemasEstudio(req, res) {
+    console.log('req.body :>> ', req.body);
+    res.send('recieved')
+}
+module.exports = {
+    createTemaEstudio,
+    modifyTemaEstudio,
+    deleteTemaEstudio,
+    getOneTemasEstudio
 }

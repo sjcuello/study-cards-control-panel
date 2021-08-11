@@ -1,15 +1,14 @@
-import { Router } from 'express'
-import { Tarjetas } from '../controlers/tarjetas.controller'
+import { Router } from 'express';
+import { createTarjeta, modifyTarjeta, deleteTarjeta, getAllTarjetas } from '../controlers/tarjetas.controller';
 
 const router = Router();
-const tarjetas = new Tarjetas()
 
-router.post('/create', tarjetas.createTarjeta)
+router.post('/create', createTarjeta);
 
-router.get('/all', tarjetas.getAllTarjetas)
+router.get('/all', getAllTarjetas);
 
-router.put('/:id', tarjetas.modifyTarjeta)
+router.put('/:id', modifyTarjeta);
 
-router.delete('/:id', tarjetas.deleteTarjeta)
+router.delete('/:id', deleteTarjeta);
 
 export default router;

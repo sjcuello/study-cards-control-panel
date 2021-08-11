@@ -1,17 +1,15 @@
 import { Router } from 'express'
+import { createTemaEstudio, modifyTemaEstudio, deleteTemaEstudio, getOneTemasEstudio } from '../controlers/temas-estudio.controller';
+
 const router = Router();
 
-import { TemasEstudio } from '../controlers/temas-estudio.controller';
+router.post('/create', createTemaEstudio)
 
-const temas_estudio = new TemasEstudio()
+router.put('/:id', modifyTemaEstudio)
 
-router.post('/create', temas_estudio.createTemaEstudio)
+router.get('/:id', getOneTemasEstudio)
 
-router.put('/:id', temas_estudio.modifyTemaEstudio)
-
-router.get('/:id', temas_estudio.getOneTemasEstudio)
-
-router.delete('/:id', temas_estudio.deleteTemaEstudio)
+router.delete('/:id', deleteTemaEstudio)
 
 
 export default router;

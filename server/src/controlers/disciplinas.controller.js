@@ -2,7 +2,6 @@ import { dummy, getAll} from '../lib/mongo';
 
 const collection = 'disciplinas';
 
-
 async function createDisciplina(req, res) {
     const { nombre, color } = req.body;
     console.log('req.body :>> ', req.body);
