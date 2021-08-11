@@ -1,15 +1,15 @@
 import { Router } from 'express'
-import { Disiplinas } from '../controlers/disciplinas.controller'
+import Disciplinas from '../controlers/disciplinas.controller'
 
 const router = Router();
-const disiplinas = new Disiplinas()
+const disciplinas = new Disciplinas()
 
-router.post('/create', disiplinas.createDisciplina)
+router.post('/create', disciplinas.createDisciplina)
 
-router.get('/all', disiplinas.allDisciplinas)
+router.get('/all', disciplinas.allDisciplinas)
 
-router.get('/:id', disiplinas.getOneDisciplina)
+router.get('/:id', disciplinas.getOneDisciplina)
 
-router.delete('/:id', disiplinas.deleteDisciplina)
+router.delete('/:id', disciplinas.deleteDisciplina)
 
 export default router;

@@ -9,7 +9,7 @@ const HOST = encodeURIComponent(config.db_host)
 
 const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${HOST}/${NAME}?retryWrites=true&w=majority`
 
-export class MongoLib {
+class MongoLib {
     constructor() {
         this.client = new MongoClient(MONGO_URI, { useNewUrlParser: true });
         this.dbName = NAME;
@@ -41,11 +41,20 @@ export class MongoLib {
             return db.collection(collection).findOne({ _id: ObjectId(id) }).toArray();
         })
     }
-
+    dummy(){
+        return 'hola'
+    }
     create(collection, data) {
-        return this.connect().then(db => {
-            return db.collection(collection).insertOne(data).toArray();
-        }).then(result => result.insertId);
+        console.log('collection :>> ', collection);
+        try {
+            console.log('data :>> ', data);
+            return this.connect().then(db => {
+                return db.collection(collection).insertOne(data).toArray();
+            }).then(result => result.insertId);
+        } catch (error) {
+            console.log('error :>> ', error);
+        }
+        
     }
 
     update(collection, id, data) {
@@ -60,3 +69,5 @@ export class MongoLib {
         }).then(() => id);
     }
 }
+
+module.exports = MongoLib;
