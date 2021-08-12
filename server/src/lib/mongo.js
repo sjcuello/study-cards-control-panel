@@ -33,31 +33,25 @@ async function getAll(collection, query) {
     })
 }
 
-function get(collection, id) {
+async function get(collection, id) {
     return connect().then(db => {
         return db.collection(collection).findOne({ _id: ObjectId(id) }).toArray();
     })
 }
 
-function create(collection, data) {
-    console.log('collection :>> ', collection);
-    try {
-        console.log('data :>> ', data);
-        return connect().then(db => {
-            return db.collection(collection).insertOne(data).toArray();
-        }).then(result => result.insertId);
-    } catch (error) {
-        console.log('error :>> ', error);
-    }
+async function create(collection, data) {
+    return connect().then(db => {
+        return db.collection(collection).insertOne(data);
+    }).then(result => result.insertedId);
 }
 
-function update(collection, id, data) {
+async function update(collection, id, data) {
     return connect().then(db => {
         return db.collection(collection).updateOne({ _id: ObjectId(id) }, { $set: data }, { upsert: true });
     }).then(result => result.upsertId || id);
 }
 
-function deleteId(collection, id) {
+async function deleteId(collection, id) {
     return connect().then(db => {
         return db.collection(collection).deleteOne({ _id: ObjectId(id) }).toArray();
     }).then(() => id);

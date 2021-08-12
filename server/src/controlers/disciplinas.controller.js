@@ -1,14 +1,15 @@
-import { dummy, getAll} from '../lib/mongo';
+import { getAll, create, get } from '../lib/mongo';
 
 const collection = 'disciplinas';
 
 async function createDisciplina(req, res) {
     const { nombre, color } = req.body;
-    console.log('req.body :>> ', req.body);
+
+    const createDisciplinaId = await create(collection, { nombre, color })
     try {
-        const resp = dummy()
-        console.log('resp :>> ', resp);
-        const createDisciplinaId = await create(collection, { nombre, color })
+        
+
+        console.log('createDisciplinaId :>> ', createDisciplinaId);
         res.json({ msg: 'ok', data: createDisciplinaId });
     } catch (error) {
         res.status(500).json({ msg: "Something goes wrong!", data: error })
@@ -18,7 +19,6 @@ async function createDisciplina(req, res) {
 async function getOneDisciplina(req, res) {
     const { id } = req.params;
     try {
-
         const disciplina = await get(collection, id);
         res.json({ msg: 'ok', data: disciplina });
     } catch (error) {
@@ -42,7 +42,6 @@ async function deleteDisciplina(req, res) {
 }
 
 async function allDisciplinas(req, res) {
-    console.log('mongoDB :>> ', dummy());
 
     try {
         const disciplinas = await getAll(collection, {})
